@@ -1,14 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 import AddToList from './components/AddToList';
-
-
 import ListOfTasks from "./components/ListOfTasks.js"
+// import Task from "./components/Task";
 
 function App() {
   const [inputText, setInputText] = useState ("");
 
   const [toDo, setToDo] = useState ([]);
+  
+  const [filter, setFilter] = useState ("all");
+  
+  const [filteredTasks, setFilteredTasks] = useState ([]);
+
+
+  const filterObserver = (task) => {
+    switch (filter)  {
+      case 'completed':
+        setFilteredTasks(toDo.filter(task => task.completed === true ))
+        break;
+      case 'uncomplete':
+        setFilteredTasks(toDo.filter(task => task.completed === false ))
+        break;
+      default: 
+        setFilteredTasks(toDo);
+        break;
+    }
+  } 
+
+  useEffect(()=> {
+    filterObserver();
+  }, [toDo, filter])
+
+
 
   return (
     <div className="App">
@@ -18,10 +42,15 @@ function App() {
         inputText={inputText}
         setToDo={setToDo} 
         setInputText={setInputText}
+        setFilter={setFilter}
       />
       {/* <div>{inputText}</div> */}
 
-      <ListOfTasks toDo={toDo}/>
+      <ListOfTasks 
+      setToDo={setToDo} 
+      toDo={toDo}
+      filteredTasks={filteredTasks}
+      />
 
 
     </div>

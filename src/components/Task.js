@@ -1,18 +1,35 @@
 import React from "react";
 
-const Task = ({text}) => {
+const Task = ({text, task, setToDo, toDo }) => {
     
+    const deleteTask = () => {
+        setToDo(toDo.filter((el) => el.id !== task.id ))
+        // console.log(task)
+ }
 
+    const completeTask = () => {
+        setToDo(toDo.map((item) => {
+            if(item.id === task.id){
+                return{
+                    ...item, completed: !item.completed
+                }
+            }
+            return item;
+        }
+        ))
+    }
 
 
 
     return(
         <div className="task">
-            <li>
+            <li className={`${task.completed ? "completed" : " "}`}>
                 {text}
+
             </li>
-            <input type="checkbox"></input>
-            <button>X</button>
+            
+            <button onClick={completeTask}>V</button>
+            <button onClick={deleteTask}>X</button>
         
         </div>
     );
