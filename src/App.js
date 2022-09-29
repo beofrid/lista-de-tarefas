@@ -19,9 +19,9 @@ function App() {
         setToDo={setToDo} 
         setInputText={setInputText}
       />
-      <div>{inputText}</div>
+      {/* <div>{inputText}</div> */}
 
-      <ListOfTasks/>
+      <ListOfTasks toDo={toDo}/>
 
 
     </div>

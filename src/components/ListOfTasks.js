@@ -1,11 +1,15 @@
 import React from "react";
 import Task from "./Task.js"
 
-const ListOfTasks = () => {
+const ListOfTasks = ({toDo}) => {
+    console.log(toDo)
     return(
         <div className="task-container">
-            <ul className="list">                
-                <Task/>
+            <ul className="list">     
+                {toDo.map(task => (
+                    <Task key={task.id} text={task.text}/>
+                ))}           
+                
 
             </ul>
 
