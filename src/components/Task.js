@@ -26,6 +26,7 @@ const Task = ({text, task, setToDo, toDo }) => {
 
 
 //retorno dos elementos do componente
+
     return(
         <div className="task">
             <li className={`${task.completed ? "completed" : " "}`}>

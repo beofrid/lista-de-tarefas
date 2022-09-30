@@ -13,6 +13,7 @@ const AddToList = ({setInputText, inputText, toDo, setToDo, setFilter}) => {
   };
 
   // função que observa o evento de submit e esvazia o input
+  
 
   const submitObserver = (e) => {
     e.preventDefault();

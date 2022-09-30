@@ -26,7 +26,7 @@ function App() {
   // }, []);
 
 
-  
+
 // Executar o filtro e salvar no local storage cada vez que uma tarefa for adicionada ou o seletor de status sofrer alteração
   useEffect(()=> {
 //função que faz a filtragem das tarefas completa ou não
@@ -58,6 +58,7 @@ function App() {
  
  
 //display de componentes
+
   return (
     
     <div className="App">
