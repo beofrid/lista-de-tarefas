@@ -18,7 +18,7 @@
 <h4> Obrigado!</h4>
 
 
-
+<img src="./public/print.png">
 
 
 
