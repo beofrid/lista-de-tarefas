@@ -27,10 +27,11 @@ const AddToList = ({setInputText, inputText, toDo, setToDo, setFilter}) => {
   return (
    
       <form> 
-        <input  type="text" value={inputText}  onChange={inputTextObserver} placeholder="Adicione uma tarefa"></input>
-        <button type="submit" onClick={submitObserver}>Adicionar tarefa</button>
+        <div className="form">
+        <input className="inputTask" type="text" value={inputText}  onChange={inputTextObserver} placeholder="Adicione uma tarefa"></input>
+        <button className="submitTask" type="submit" onClick={submitObserver}>+</button>
 
-        <select onChange={filterObserver}>
+        <select onChange={filterObserver} className="status">
           <option value="all">Todas as tarefas</option>
           <option value="completed">Tarefas completas </option>
           <option value="uncomplete">Tarefas pendentes</option>
@@ -39,6 +40,7 @@ const AddToList = ({setInputText, inputText, toDo, setToDo, setFilter}) => {
 
 
         </select>
+        </div>
       </form>
 
 

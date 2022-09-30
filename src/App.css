@@ -1,9 +1,94 @@
 * {
-  /* margin: 0;
-  padding: 0; */
+  margin: 0;
+  padding: 0;
   text-decoration: none;
-  list-style-type: none
+  list-style-type: none;
+  font-family: monospace;
+  color: #dadada;
+
 }
+.container{
+  display: flex;
+}
+
+body {
+  background: #252627;
+}
+header {
+  height: 12vh;
+  font-size: 30pt;
+  line-height: 12vh;
+  text-align: center;
+  background-color: #0D1216;
+
+}
+form {
+  height: 88vh;
+  background-color: #151E24;
+  width: 30%;
+
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 35px 10px 0 35px ;
+  
+}
+
+.inputTask{
+  height: 45px;
+  width: 200px;
+  border: 2px solid #004AAD;
+  border-right: none;
+  background-color: #3D77D9;
+  border-radius: 10px 0 0 10px;
+
+}
+
+.inputTask::placeholder{
+  font-size: 13pt;
+  color: #dadada;
+
+}
+
+.status{
+  margin-top: 20px;
+  height: 45px;
+  width: 240px;
+  border: 2px solid #004AAD;
+  border-radius: 10px;
+  background-image: linear-gradient(90deg, #3D77D9 84%,#004AAD 84%);
+
+}
+
+
+
+.submitTask{
+  height: 45px;
+  width: 40px;
+  font-size: 40pt;
+  line-height: 1px;
+  border: 1px solid #004AAD;
+  border: 2px solid #004AAD;
+  background-color: #004AAD;
+  border-radius: 0 10px 10px 0;;
+
+  
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+li {
+  background-color: #3D77D9;
+  width: 50vw;
+}
+
+
 
 .task { 
   display: flex;

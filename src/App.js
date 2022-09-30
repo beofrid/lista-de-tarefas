@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 import AddToList from './components/AddToList';
 import ListOfTasks from "./components/ListOfTasks.js"
-// import Task from "./components/Task";
 
 function App() {
   const [inputText, setInputText] = useState ("");
@@ -29,28 +28,29 @@ function App() {
   } 
 
   useEffect(()=> {
-    filterObserver();
-  }, [toDo, filter])
+    filterObserver();}, [toDo, filter])
 
 
 
   return (
     <div className="App">
       <header> Lista de tarefas  </header>
-      <AddToList 
+      <div className="container">
+        <AddToList 
         toDo={toDo} 
         inputText={inputText}
         setToDo={setToDo} 
         setInputText={setInputText}
         setFilter={setFilter}
       />
-      {/* <div>{inputText}</div> */}
 
       <ListOfTasks 
       setToDo={setToDo} 
       toDo={toDo}
       filteredTasks={filteredTasks}
       />
+      </div>
+      
 
 
     </div>
