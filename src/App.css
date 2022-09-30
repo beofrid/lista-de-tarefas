@@ -38,56 +38,74 @@ form {
 
 .inputTask{
   height: 45px;
-  width: 200px;
-  border: 2px solid #004AAD;
-  border-right: none;
+  width: 240px;
+  border: 2px ridge #004AAD;
   background-color: #3D77D9;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
 
 }
 
 .inputTask::placeholder{
-  font-size: 13pt;
+  font-size: 11pt;
   color: #dadada;
 
 }
+.submitTask{
+  margin: 0 auto;
+  margin-top: 7px;
+  background-image: linear-gradient(0deg, #004AAD, #002659 90%);
+  height: 49px;
+  width: 40px;
+  font-size: 40px;
+  border: none;
+  background-color: #004AAD;
+  border-radius: 10px;
 
+  
+}
 .status{
   margin-top: 20px;
   height: 45px;
   width: 240px;
-  border: 2px solid #004AAD;
+  border: 2px solid #0D1216;
   border-radius: 10px;
-  background-image: linear-gradient(90deg, #3D77D9 84%,#004AAD 84%);
+  font-size: 11pt;
+  background: #252627 ;
 
-}
-
-
-
-.submitTask{
-  height: 45px;
-  width: 40px;
-  font-size: 40pt;
-  line-height: 1px;
-  border: 1px solid #004AAD;
-  border: 2px solid #004AAD;
-  background-color: #004AAD;
-  border-radius: 0 10px 10px 0;;
-
-  
 }
 
 .list {
   display: flex;
+  padding: 2vh 10vw;
   flex-direction: column;
   width: 100%;
   height: 100%;
 }
 li {
+  margin-top: 5px;
+  height: 45px;
+  font-size: 13pt;
+  font-weight: 500;
   background-color: #3D77D9;
+  border: #004AAD solid;
+  border-radius: 20px;
   width: 50vw;
+  text-align: center;
+  line-height: 45px;
+
 }
 
+
+.buttonTask {
+  min-width: 35px;
+  border-color: #002659;
+  border-style: solid;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 900;
+  width: 4vw;
+  background-color: #004AAD;
+}
 
 
 .task { 
@@ -97,4 +115,19 @@ li {
 .completed {
   text-decoration: line-through;
   opacity: 0.2;
+}
+
+@media only screen and (max-width: 600px){
+  header {
+    font-size: 23pt;
+  }
+  .container{
+    flex-direction: column;
+  }
+  form {
+    padding-bottom: 10px;
+    height: 100%;
+    width: 100%;
+  }
+  
 }

@@ -1,11 +1,16 @@
 import React from "react";
 
+// componente de cada tarefa disposta na inferface
+
+
 const Task = ({text, task, setToDo, toDo }) => {
-    
+
+// ação de usuário para deletar uma tarefa
     const deleteTask = () => {
         setToDo(toDo.filter((el) => el.id !== task.id ))
-        // console.log(task)
  }
+
+ // ação de usuário para marcar uma tarefa como concluida
 
     const completeTask = () => {
         setToDo(toDo.map((item) => {
@@ -20,16 +25,16 @@ const Task = ({text, task, setToDo, toDo }) => {
     }
 
 
-
+//retorno dos elementos do componente
     return(
         <div className="task">
             <li className={`${task.completed ? "completed" : " "}`}>
                 {text}
-
-            </li>
             
-            <button onClick={completeTask}>V</button>
-            <button onClick={deleteTask}>X</button>
+            </li>
+            <button className={`buttonTask  ${task.completed ? "completed" : " "}`} onClick={completeTask}>V</button>
+            <button className={`buttonTask  ${task.completed ? "completed" : " "}`} onClick={deleteTask}>X</button>
+           
         
         </div>
     );

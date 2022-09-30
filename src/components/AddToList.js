@@ -1,12 +1,19 @@
 import React from "react";
-// import Task from "./Task.js"
+
+
+
+// componente de formulário com input e seletor de status, onde coleta os dados e comandos do usuário
 
 
 const AddToList = ({setInputText, inputText, toDo, setToDo, setFilter}) => {
+  
+  // função que observa o evento de entrada
   const inputTextObserver = (e) => {
-    // console.log(e.target.value);
     setInputText(e.target.value)
   };
+
+  // função que observa o evento de submit e esvazia o input
+
   const submitObserver = (e) => {
     e.preventDefault();
     setToDo([
@@ -14,22 +21,26 @@ const AddToList = ({setInputText, inputText, toDo, setToDo, setFilter}) => {
         {text: inputText, completed: false, id: Math.random() * 1000 }
       ]
     )
-    // {console.log(Task.index, "task")}
        setInputText('')
   }
+
+  // função que ativa o evento de filtro
   const filterObserver = (e) => {
     setFilter(e.target.value)
 
   }
 
 
- 
+ //elementos do componente
   return (
    
       <form> 
         <div className="form">
-        <input className="inputTask" type="text" value={inputText}  onChange={inputTextObserver} placeholder="Adicione uma tarefa"></input>
-        <button className="submitTask" type="submit" onClick={submitObserver}>+</button>
+       
+          <input className="inputTask" type="text" value={inputText}  onChange={inputTextObserver} placeholder="Adicione uma tarefa"></input>
+          <button className="submitTask" type="submit" onClick={submitObserver}>+</button>
+          
+          
 
         <select onChange={filterObserver} className="status">
           <option value="all">Todas as tarefas</option>
@@ -41,6 +52,8 @@ const AddToList = ({setInputText, inputText, toDo, setToDo, setFilter}) => {
 
         </select>
         </div>
+
+        
       </form>
 
 
