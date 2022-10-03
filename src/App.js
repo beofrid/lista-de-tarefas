@@ -20,10 +20,12 @@ function App() {
 
 
 // Buscar tarefas armazenadas no local storage, acabou resultando em erro, mantive ele para futuros ajustes :')
-  // useEffect(() =>{   
-
-  //   getLocal ()
-  // }, []);
+  useEffect(() =>{   
+    const getLocal = () => {
+      localStorage.setItem("toDo", JSON.stringify(toDo))
+    }
+    getLocal ()
+  }, []);
 
 
 
@@ -52,10 +54,9 @@ function App() {
     localStorage.setItem("toDo", JSON.stringify(toDo))
   }
    localSave ();
-
+ 
   }, [toDo, filter])
 
- 
  
 //display de componentes
 
@@ -80,8 +81,6 @@ function App() {
       />
       </div>
       
-
-
     </div>
   );
 }
